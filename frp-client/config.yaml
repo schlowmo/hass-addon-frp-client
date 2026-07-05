@@ -22,13 +22,19 @@ options:
   serverAddr: "example.com"
   serverPort: 7000
   authToken: "123456789"
-  customDomain: "example.com"
-  proxyName: "homeassistant"
-  localPort: 8123
+  httpProxyName: "homeassistantHttp"
+  httpLocalPort: 80
+  httpRemotePort: 80
+  httpsProxyName: "homeassistantHttps"
+  httpsLocalPorts: 443
+  httpsRemotePort: 443  
 schema:
   serverAddr: str
   serverPort: int
   authToken: str
-  customDomain: str
-  proxyName: str
-  localPort: int
+  httpProxyName: str
+  httpLocalPort: int
+  httpRemotePort: int
+  httpsProxyName: str
+  httpsLocalPort: int
+  httpsRemotePort: int

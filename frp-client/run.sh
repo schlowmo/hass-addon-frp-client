@@ -13,9 +13,12 @@ cp $DEFAULT_CONFIG_PATH $CONFIG_PATH
 sed -i "s/serverAddr = \"your_server_addr\"/serverAddr = \"$(bashio::config 'serverAddr')\"/" $CONFIG_PATH
 sed -i "s/serverPort = 7000/serverPort = $(bashio::config 'serverPort')/" $CONFIG_PATH
 sed -i "s/auth.token = \"123456789\"/auth.token = \"$(bashio::config 'authToken')\"/" $CONFIG_PATH
-sed -i "s/customDomains = \[\"your_domain\"\]/customDomains = [\"$(bashio::config 'customDomain')\"]/" $CONFIG_PATH
-sed -i "s/name = \"your_proxy_name\"/name = \"$(bashio::config 'proxyName')\"/" $CONFIG_PATH
-sed -i "s/localPort = 8123/localPort = $(bashio::config 'localPort')/" $CONFIG_PATH
+sed -i "s/name = \"http_proxy_name\"/name = \"$(bashio::config 'httpProxyName')\"/" $CONFIG_PATH
+sed -i "s/localPort = 80/localPort = $(bashio::config 'httpLocalPort')/" $CONFIG_PATH
+sed -i "s/remotePort = 80/remotePort = $(bashio::config 'httpRemotePort')/" $CONFIG_PATH
+sed -i "s/name = \"https_proxy_name\"/name = \"$(bashio::config 'httpsProxyName')\"/" $CONFIG_PATH
+sed -i "s/localPort = 443/localPort = $(bashio::config 'httpsLocalPort')/" $CONFIG_PATH
+sed -i "s/remotePort = 443/remotePort = $(bashio::config 'httpsRemotePort')/" $CONFIG_PATH
 
 
 bashio::log.info "Starting frp client"
