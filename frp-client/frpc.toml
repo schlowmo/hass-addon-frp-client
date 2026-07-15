@@ -14,13 +14,13 @@ log.maxDays = 3
 # transport.tls.trustedCaFile = "/share/frp/fullchain.pem"
 # transport.tls.serverName = "your_server_name"
 
-[[proxies]]
-name = "http_proxy_name"
-type = "tcp"
-transport.useEncryption = true
-localPort = 80
-localIP = "0.0.0.0"
-remotePort = 80
+#[[proxies]]
+#name = "http_proxy_name"
+#type = "tcp"
+#transport.useEncryption = true
+#localPort = 80
+#localIP = "0.0.0.0"
+#remotePort = 80
 
 [[proxies]]
 name = "https_proxy_name"
